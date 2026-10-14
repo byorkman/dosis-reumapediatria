@@ -1,0 +1,10 @@
+{
+  "name": "dosis-reumapediatria",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Calculadora de dosis por peso y superficie corporal en reumatología pediátrica",
+  "scripts": {
+    "test": "node --test"
+  }
+}
