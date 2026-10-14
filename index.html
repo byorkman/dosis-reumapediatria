@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dosis en reumatología pediátrica</title>
+  <meta name="description" content="Calculadora de dosis por peso y superficie corporal en reumatología pediátrica.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Dosis en reumatología pediátrica</h1>
+      <p class="sub">Por peso y superficie corporal</p>
+    </header>
+
+    <p class="aviso">Tabla de dosis pendiente de validación médica. Verificá siempre la dosis antes de indicarla.</p>
+
+    <form id="form" novalidate>
+      <div class="fila">
+        <div class="campo">
+          <label for="peso">Peso (kg)</label>
+          <input type="number" id="peso" inputmode="decimal" min="0" max="200" step="0.1" placeholder="Ej.: 24,5">
+        </div>
+        <div class="campo">
+          <label for="talla">Talla (cm) <span class="rango">para m²</span></label>
+          <input type="number" id="talla" inputmode="decimal" min="0" max="230" step="0.5" placeholder="Ej.: 125">
+        </div>
+      </div>
+      <p id="sc" class="sc"></p>
+      <div class="campo">
+        <label for="buscar">Buscar droga</label>
+        <input type="search" id="buscar" placeholder="Ej.: metotrexato">
+      </div>
+    </form>
+
+    <section id="lista" aria-live="polite"></section>
+
+    <footer>
+      <p>Los datos no se guardan ni se envían: el cálculo se hace solo en este dispositivo.</p>
+      <p>Herramienta de apoyo; no reemplaza el criterio clínico ni el prospecto.</p>
+    </footer>
+  </main>
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
