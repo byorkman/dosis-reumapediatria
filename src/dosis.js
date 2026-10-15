@@ -17,8 +17,8 @@ function aplicarTope(mg, tope) {
 
 // Devuelve { min, max, topeado, porToma?, texto?, sc?, error? } en mg.
 export function calcularDosis(droga, { peso, talla }) {
-  if (!(peso > 0)) return { error: "Ingresá el peso" };
-  if (peso > 200) return { error: "Revisá el peso" };
+  if (!(peso > 0)) return { error: "Falta el peso" };
+  if (peso > 200) return { error: "Peso fuera de rango" };
   const e = droga.esquema;
 
   if (e.tipo === "mgkg" || e.tipo === "m2") {
@@ -26,7 +26,7 @@ export function calcularDosis(droga, { peso, talla }) {
     let sc;
     if (e.tipo === "m2") {
       if (!(talla > 0)) return { error: "Para esta droga hace falta la talla" };
-      if (talla > 230) return { error: "Revisá la talla" };
+      if (talla > 230) return { error: "Talla fuera de rango" };
       sc = redondear(superficieCorporal(peso, talla), 2);
       base = sc;
     }
